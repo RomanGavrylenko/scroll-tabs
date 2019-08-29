@@ -267,7 +267,7 @@ ScrollTabs.prototype._bindWheelEvent = function(node) {
 
     if (newActiveTab) {
       self.scrollToTabNode(newActiveTab);
-      self.emit('scroll', newActiveTab, oldActiveTab, direction);
+      self.emit('scroll', {newActiveTab, oldActiveTab, direction});
     }
 
     e.preventDefault();
@@ -296,7 +296,7 @@ ScrollTabs.prototype._bindScrollButtonEvents = function(node) {
 
     if (newActiveTabNode) {
       self.scrollToTabNode(newActiveTabNode);
-      self.emit('scroll', newActiveTabNode, oldActiveTabNode, direction);
+      self.emit('scroll', {newActiveTabNode, oldActiveTabNode, direction});
     }
 
     event.preventDefault();
